@@ -1,0 +1,707 @@
+/* Add to App.css */
+
+/* App Layout */
+.app-layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+  padding: 20px;
+  overflow-x: hidden;
+}
+
+/* Sidebar Styles */
+.sidebar {
+  width: 280px;
+  background: linear-gradient(180deg, #0a0a2a 0%, #0f0f35 100%);
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.sidebar-header {
+  text-align: center;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: 20px;
+}
+
+.sidebar-header h2 {
+  font-size: 1.5rem;
+  margin-bottom: 5px;
+  background: linear-gradient(135deg, #ffd89b, #c7e9fb);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.sidebar-header p {
+  font-size: 0.85rem;
+  color: #aaa;
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  border-radius: 10px;
+  color: #ddd;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffd89b;
+}
+
+.nav-link.active {
+  background: rgba(255, 216, 155, 0.2);
+  color: #ffd89b;
+  border-left: 3px solid #ffd89b;
+}
+
+.nav-icon {
+  font-size: 1.2rem;
+}
+
+.sidebar-info {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
+.sidebar-info h4 {
+  margin-bottom: 8px;
+  color: #ffd89b;
+}
+
+.sidebar-info p {
+  font-size: 0.85rem;
+  line-height: 1.4;
+  color: #bbb;
+}
+
+.sidebar-stats {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 15px;
+}
+
+.sidebar-stats h4 {
+  margin-bottom: 12px;
+  color: #ffd89b;
+}
+
+.stat-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 0.9rem;
+}
+
+/* Dashboard Header */
+.dashboard-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.dashboard-header h1 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  background: linear-gradient(135deg, #ffd89b, #c7e9fb);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.subtitle {
+  color: #aaa;
+}
+
+/* Charts Section */
+.charts-section {
+  margin-bottom: 30px;
+}
+
+.charts-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 0 10px;
+}
+
+.charts-header h2 {
+  font-size: 1.5rem;
+}
+
+.toggle-charts-btn {
+  padding: 8px 16px;
+  background: rgba(255, 216, 155, 0.2);
+  border: 1px solid rgba(255, 216, 155, 0.3);
+  border-radius: 8px;
+  color: #ffd89b;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.toggle-charts-btn:hover {
+  background: rgba(255, 216, 155, 0.3);
+}
+
+.charts-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  gap: 20px;
+}
+
+.chart-card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  padding: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.chart-card h3 {
+  margin-bottom: 8px;
+  color: #ffd89b;
+}
+
+.chart-description {
+  font-size: 0.8rem;
+  color: #aaa;
+  margin-bottom: 20px;
+}
+
+.chart-insight {
+  margin-top: 15px;
+  padding: 10px;
+  background: rgba(255, 216, 155, 0.1);
+  border-radius: 8px;
+  font-size: 0.85rem;
+  border-left: 3px solid #ffd89b;
+}
+
+.chart-tooltip {
+  background: #1a1a3a;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  padding: 10px;
+}
+
+.tooltip-label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.tooltip-value {
+  color: #ffd89b;
+}
+
+/* Data Row Links */
+.data-row-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.data-row-link:hover .data-row {
+  transform: translateX(5px);
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 216, 155, 0.3);
+}
+
+.data-row {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 15px;
+  padding: 15px;
+  display: flex;
+  gap: 20px;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+}
+
+.view-details {
+  padding: 8px 16px;
+  background: rgba(255, 216, 155, 0.2);
+  border-radius: 8px;
+  color: #ffd89b;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.data-row-link:hover .view-details {
+  background: rgba(255, 216, 155, 0.4);
+  transform: scale(1.05);
+}
+
+/* Detail View Styles */
+.detail-view {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.back-button {
+  padding: 10px 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+}
+
+.back-button:hover {
+  background: rgba(255, 216, 155, 0.3);
+  transform: translateX(-5px);
+}
+
+.detail-content {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  padding: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.detail-header {
+  margin-bottom: 25px;
+}
+
+.detail-header h1 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  color: #ffd89b;
+}
+
+.detail-meta {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  padding: 10px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.detail-meta span {
+  font-size: 0.9rem;
+  color: #bbb;
+}
+
+.detail-media {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.detail-image {
+  max-width: 100%;
+  max-height: 500px;
+  border-radius: 15px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+.detail-video {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  border-radius: 15px;
+}
+
+.detail-video iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+}
+
+.detail-explanation {
+  margin-bottom: 30px;
+}
+
+.detail-explanation h2,
+.detail-extra h2 {
+  margin-bottom: 15px;
+  color: #ffd89b;
+}
+
+.detail-explanation p {
+  line-height: 1.6;
+  color: #ddd;
+}
+
+.detail-extra {
+  margin-bottom: 30px;
+}
+
+.extra-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.extra-card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 15px;
+}
+
+.extra-card h3 {
+  margin-bottom: 12px;
+  font-size: 1rem;
+}
+
+.extra-card ul {
+  list-style: none;
+  padding: 0;
+}
+
+.extra-card li {
+  padding: 6px 0;
+  font-size: 0.9rem;
+  color: #ccc;
+}
+
+.extra-card a {
+  color: #ffd89b;
+  text-decoration: none;
+}
+
+.extra-card a:hover {
+  text-decoration: underline;
+}
+
+.detail-navigation {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.nav-button {
+  padding: 12px 24px;
+  background: linear-gradient(135deg, #ffd89b, #c7e9fb);
+  border: none;
+  border-radius: 10px;
+  color: #1a1a3a;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.nav-button:hover {
+  transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .app-layout {
+    flex-direction: column;
+  }
+  
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+  
+  .charts-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .extra-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .detail-header h1 {
+    font-size: 1.5rem;
+  }
+  
+  .detail-content {
+    padding: 20px;
+  }
+}
+/* Add/Update these styles in App.css */
+
+/* Global text contrast improvements */
+body {
+  color: #e0e0e0; /* Lighter default text */
+}
+
+/* Sidebar stats - make text lighter */
+.sidebar-stats .stat-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 0.9rem;
+  color: #c0c0c0; /* Lighter color for stats text */
+}
+
+.sidebar-stats .stat-item span:first-child {
+  color: #ffd89b; /* Keep labels readable */
+}
+
+.sidebar-stats .stat-item span:last-child {
+  color: #e0e0e0; /* Lighter values */
+  font-weight: 500;
+}
+
+/* Dashboard stat cards - improve contrast */
+.stat-card {
+  background: rgba(0, 0, 0, 0.6); /* Darker background for better contrast */
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.stat-value {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #ffd89b;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 5px;
+  color: #e0e0e0; /* Lighter label text */
+}
+
+.stat-sub {
+  font-size: 0.75rem;
+  color: #c0c0c0; /* Lighter subtext */
+}
+
+/* Data row text improvements */
+.row-content h3 {
+  font-size: 1.1rem;
+  color: #ffd89b;
+  margin-right: 10px;
+}
+
+.row-explanation {
+  color: #d0d0d0; /* Lighter explanation text */
+  font-size: 0.9rem;
+  line-height: 1.4;
+  margin-bottom: 8px;
+}
+
+.meta-tag {
+  font-size: 0.75rem;
+  background: rgba(255, 216, 155, 0.15);
+  padding: 3px 8px;
+  border-radius: 12px;
+  color: #ffd89b;
+}
+
+.date-badge {
+  font-size: 0.75rem;
+  background: rgba(255, 255, 255, 0.15);
+  padding: 3px 8px;
+  border-radius: 12px;
+  font-family: monospace;
+  color: #e0e0e0;
+}
+
+/* Chart text improvements */
+.chart-card {
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 15px;
+  padding: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.chart-card h3 {
+  margin-bottom: 8px;
+  color: #ffd89b;
+  font-weight: 600;
+}
+
+.chart-description {
+  font-size: 0.85rem;
+  color: #c0c0c0;
+  margin-bottom: 20px;
+}
+
+.chart-insight {
+  margin-top: 15px;
+  padding: 12px;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 8px;
+  font-size: 0.9rem;
+  border-left: 3px solid #ffd89b;
+  color: #e0e0e0;
+}
+
+.chart-tooltip {
+  background: #1a1a3a;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  padding: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.tooltip-label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #1a1a3a;
+}
+
+.tooltip-value {
+  color: #ffd89b;
+  font-weight: bold;
+}
+
+/* Recharts axis and label improvements */
+.recharts-text {
+  fill: #d0d0d0 !important;
+  font-size: 11px !important;
+}
+
+.recharts-cartesian-axis-line {
+  stroke: #666 !important;
+}
+
+.recharts-cartesian-grid-line {
+  stroke: rgba(255, 255, 255, 0.1) !important;
+}
+
+.recharts-legend-item-text {
+  color: #e0e0e0 !important;
+}
+
+/* Detail view text improvements */
+.detail-content {
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 20px;
+  padding: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.detail-header h1 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  color: #ffd89b;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.detail-meta span {
+  font-size: 0.9rem;
+  color: #d0d0d0;
+}
+
+.detail-explanation p {
+  line-height: 1.6;
+  color: #e0e0e0;
+}
+
+.extra-card {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 15px;
+}
+
+.extra-card h3 {
+  margin-bottom: 12px;
+  font-size: 1rem;
+  color: #ffd89b;
+}
+
+.extra-card li {
+  padding: 6px 0;
+  font-size: 0.9rem;
+  color: #d0d0d0;
+}
+
+.extra-card a {
+  color: #c7e9fb;
+  text-decoration: none;
+}
+
+.extra-card a:hover {
+  color: #ffd89b;
+  text-decoration: underline;
+}
+
+/* Results summary text */
+.results-summary p {
+  color: #e0e0e0;
+  font-weight: 500;
+}
+
+/* Filter controls text */
+.filter-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 0.85rem;
+  color: #ffd89b;
+  font-weight: 500;
+}
+
+.filter-select, .date-input, .search-input {
+  color: #e0e0e0;
+}
+
+.filter-select option {
+  background: #1a1a3a;
+  color: #e0e0e0;
+}
+
+/* No results text */
+.no-results p {
+  color: #e0e0e0;
+  font-size: 1.1rem;
+}
+
+/* Footer text */
+.footer {
+  margin-top: 40px;
+  text-align: center;
+  padding: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  color: #aaa;
+  font-size: 0.8rem;
+}
+
+/* Sidebar info text */
+.sidebar-info p {
+  font-size: 0.85rem;
+  line-height: 1.4;
+  color: #d0d0d0;
+}
+
+.sidebar-info h4 {
+  margin-bottom: 8px;
+  color: #ffd89b;
+}
+
+/* Loading text */
+.loading-container p {
+  color: #e0e0e0;
+  margin-top: 15px;
+}
